@@ -2,7 +2,7 @@ import React from 'react'
 
 function ProductDetails() {
   return (
-    <div>ProductDetails</div>
+    <h1>Product Details Page</h1>
   )
 }
 

@@ -1,1 +1,28 @@
 @import "tailwindcss";
+
+a {
+  display: block;
+}
+
+a.active{
+  color: gren;
+  /* background-color: #039003e7; */
+  border-bottom: 5px solid green;
+}
+
+.shoppingBagContainer {
+  position: relative;
+}
+
+.cartCount {
+  position: absolute;
+  top: -13px;
+  right: -10px;
+  font-size: 17px;
+  width: 22px;
+  height: 24px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: rgb(111, 210, 30);
+  color: rgb(2, 135, 2);
+}
