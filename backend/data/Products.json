@@ -1,0 +1,11 @@
+{
+    "products" : [
+        {
+            "id" : 1,
+            "phonename" : "Samsung S10",
+            "brand" : "Samsung"
+        }
+
+    ]
+
+}
