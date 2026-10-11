@@ -26,3 +26,19 @@ a.active{
   background-color: rgb(111, 210, 30);
   color: rgb(2, 135, 2);
 }
+
+.footer, .footer *{
+  /* border: 1px solid blue; */
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-content > div {
+  flex: 1;
+  min-width: 254px;
+  padding: 5px;
+  border: 1px solid blue;
+}
