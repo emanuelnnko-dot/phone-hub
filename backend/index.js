@@ -13,28 +13,30 @@ app.use(express.json());
 // Sample API Endpoint
 app.get('/api/products', (req, res) => {
 //   res.json({ message: "Hello from the Node.js + Express backend!" });
-const data = fs.readFileSync("./data/Products.json", "utf-8");
+const data = fs.readFileSync("./data/phoneProducts.json", "utf-8");
 const products = JSON.parse(data);
 res.json(products);
 });
 
-app.post("/api/products", (req, res => {
-    const data = fs.readFileSync("./data/Products.json", "utf-8");
+app.post("/api/products", (req, res) => {
+    const data = fs.readFileSync("./data/phoneProducts.json", "utf-8");
     const database = JSON.parse(data);
 
     const newProduct = {
         id: UUID,
-        phonename: "Apple 18",
-        brand: "Apple"
+        name: req.body.name,
+        brand: req.body.brand,
+        price: req.body.price,
+        imageUrl: req.body.imageUrl
     }
     database.products.push(newProduct);
-    fs.writeFileSync("./data/Products.json", JSON.stringify(database, null, 2));
+    fs.writeFileSync("./data/phoneProducts.json", JSON.stringify(database));
 
-    res.statusCode(201).json({
+    res.status(201).json({
         message: "Product added successfully",
         product: newProduct
     })
-}));
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
