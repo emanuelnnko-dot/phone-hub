@@ -6,12 +6,13 @@ function ProductList() {
 
     const [products, setProducts] = useState([]); // Manages products data from the server
 
-    // // Manages product data from user
+    // Manages product data from user
     const [product, setProduct] = useState({
         name: "",
         brand: "",
         price: "",
-        imageUrl: ""
+        imageUrl: "",
+        description: ""
     });
 
     const [loading, setLoading] = useState(null);
@@ -34,13 +35,6 @@ function ProductList() {
 
     console.log(products);
 
-    // const newProduct = {
-    //     name: "iPhone 18",
-    //     brand: "Apple",
-    //     price: 150000,
-    //     imageUrl: ""
-    // }
-
     const handleInput = (e) => {
         setProduct({...product, [e.target.name] : e.target.value});
     }
@@ -50,6 +44,12 @@ function ProductList() {
     const addNewProduct = async (e) => {
         console.log("clicked");
         e.preventDefault();
+
+        const {name, brand, price, imageUrl, description} = product;
+        if (name === "" ||  brand === "" ||  price === "" || imageUrl === "" || description === "") {
+            return;
+        }
+
         try {
             // setLoading(true);
             console.log(product);
@@ -63,7 +63,6 @@ function ProductList() {
             setLoading(false);
         }
     }
-    // addNewProduct();
 
     return (
         <>
@@ -92,6 +91,9 @@ function ProductList() {
                     
                     <label htmlFor="input-phone-price">Price: </label> <br />
                     <input type="text" id="input-phone-price" name="price" value={product.price} onChange={handleInput} placeholder="Enter phone price"/> <br />
+
+                    <label htmlFor="description">Description: </label> <br />
+                    <textarea id="description" name="description" value={product.description} onChange={handleInput} placeholder="Enter phone description"></textarea> <br />
 
                     <button type="submit">Add new product</button>
             </form>

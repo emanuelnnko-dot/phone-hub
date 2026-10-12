@@ -96,7 +96,7 @@ h3 {
   margin: 5px 0px;
 }
 
-.product-form input {
+.product-form input, textarea {
   width: 470px;
   background-color: var(--bg-color-level-1);
   outline-color: var(--border-color-level-2);
@@ -131,7 +131,7 @@ h3 {
 }
 
 .image-container {
-  max-width: 350px;
+  min-width: 330px;
   height: 400px;
 }
 
