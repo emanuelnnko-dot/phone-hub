@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
@@ -77,16 +76,4 @@ function Checkout() {
     </>
   )
 }
-
 export default Checkout
-=======
-import React from 'react'
-
-function Checkout() {
-  return (
-    <div>Checkout</div>
-  )
-}
-
-export default Checkout
->>>>>>> 98086f333882796b3a7b32149d65511101fd7571
