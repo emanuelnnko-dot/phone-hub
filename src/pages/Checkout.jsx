@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
-export default function Checkout() {
+function Checkout() {
   const { total, clearCart } = useCart()
   const navigate = useNavigate()
   const [form, setForm] = useState({
@@ -77,6 +77,8 @@ export default function Checkout() {
     </>
   )
 }
+
+export default Checkout
 =======
 import React from 'react'
 
