@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
@@ -6,7 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
-export default function Login() {
+function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -53,14 +52,6 @@ export default function Login() {
     </div>
   )
 }
-=======
-import React from 'react'
 
-function Login() {
-  return (
-    <h1>Login Page</h1>
-  )
-}
 
 export default Login
->>>>>>> 98086f333882796b3a7b32149d65511101fd7571
