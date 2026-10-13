@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
@@ -52,3 +53,14 @@ export default function Login() {
     </div>
   )
 }
+=======
+import React from 'react'
+
+function Login() {
+  return (
+    <h1>Login Page</h1>
+  )
+}
+
+export default Login
+>>>>>>> 98086f333882796b3a7b32149d65511101fd7571
