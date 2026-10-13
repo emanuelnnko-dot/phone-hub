@@ -1,10 +1,9 @@
-<<<<<<< HEAD
 import { Link } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 
-export default function Cart() {
+function Cart() {
   const { cart, removeFromCart, updateQuantity, total } = useCart()
 
   if (cart.length === 0) {
@@ -66,14 +65,4 @@ export default function Cart() {
     </div>
   )
 }
-=======
-import React from 'react'
-
-function Cart() {
-  return (
-    <h1>Cart Page</h1>
-  )
-}
-
 export default Cart
->>>>>>> 98086f333882796b3a7b32149d65511101fd7571
