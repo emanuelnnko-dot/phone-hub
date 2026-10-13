@@ -1,9 +1,59 @@
-import React from 'react'
+import { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { useAuth } from '../context/AuthContext'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 function Login() {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
+  const { login } = useAuth()
+  const navigate = useNavigate()
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (!email.trim() || !password.trim()) {
+      setError('Please fill in both fields')
+      return
+    }
+    login({ email })
+    navigate('/checkout')
+  }
+
   return (
-    <h1>Login Page</h1>
+    <div className="flex items-center justify-center min-h-[70vh]">
+      <Card className="w-full max-w-sm">
+        <CardHeader>
+          <CardTitle>Login</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <Input
+              type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}
+            />
+            <Input
+              type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}
+            />
+            {error && <p className="text-sm text-red-500">{error}</p>}
+            <Button type="submit" className="w-full">
+              Sign in
+            </Button>
+          </form>
+            
+            <p className="mt-4 text-sm text-center">
+            Don't have an account?{' '}
+            <Link to="/register" className="text-blue-600 underline">
+              Register
+            </Link>
+          </p>
+
+        </CardContent>
+      </Card>
+    </div>
   )
 }
+
 
 export default Login
